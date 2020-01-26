@@ -4,9 +4,10 @@ import os
 import cgitb
 cgitb.enable()
 
-print("Content-Type: text/plain\r\n\r\n")
-#print()
-#print("<!doctype html><title>Hello</title><h2>Hello World</h2>")
-for key in os.environ:
-	print(key,os.environ[key])
-#print(os.environ)
+print("Content-type: text/html")
+print()
+print("<meta charset=\"utf-8\">")
+print("<ul>")
+for key in os.environ.keys():
+    print("<li><span style='color:green'>%30s </span> : %s </li>" % (key,os.environ[key]))
+print("</ul>")
